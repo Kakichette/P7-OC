@@ -1,0 +1,4 @@
+pandas==1.5.3
+flask==2.2.2
+lightgbm==3.3.5
+zipp==3.11.0
