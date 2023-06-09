@@ -49,11 +49,9 @@ def load_data():
     training = pd.read_csv(z2.open('X_data.csv'), encoding ='utf-8')
     training_target=training[['TARGET']]
     # Renommer les caractéristiques
-    #echantillon= data.copy()
-    echantillon = data.sample(n=800)
+    echantillon= data.copy()
+    #echantillon = data.sample(n=800)
     general = general[general['SK_ID_CURR'].isin(echantillon['SK_ID_CURR'])]
-
-    #echantillon.columns = ["".join([c if c.isalnum() else "_" for c in str(col)]) for col in echantillon.columns]
     labels = echantillon["SK_ID_CURR"]
     echantillon=echantillon.sort_values("SK_ID_CURR")
     labels=labels.sort_values()
