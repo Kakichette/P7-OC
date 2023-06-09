@@ -219,10 +219,10 @@ st.markdown("------------")
 
 
 
-b1,b2 = st.columns(2)
 
 st.write("<b>Les caractéristiques importantes pour accepter une demande </b>", unsafe_allow_html=True)
-value_max = b1.slider("Comnbien de caractéristiques souhaitez vous afficher ? ", min_value=1, max_value=20, step=1,value=15)
+b1,b2 = st.columns(2)
+value_max = b1.slider("Combien de caractéristiques souhaitez vous afficher ? ", min_value=1, max_value=20, step=1,value=15)
 
 shap_abs_mean = abs(shap_values).mean(axis=0)
 top_features_indices = shap_abs_mean.argsort()[-value_max:]  # Sélectionner les indices des 15 caractéristiques les plus importantes
