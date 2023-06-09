@@ -142,13 +142,13 @@ response = requests.get(api_url, params=payload)
 if response.status_code == 200:
     # Afficher la réponse de l'API Flask
     if response.text == '0':
-        a3.markdown('<p style="font-size: 16px; color: green; font-weight: bold;"> Félicitations ! Demande acceptée.</p>', unsafe_allow_html=True)
+        a3.markdown('<p style="font-size: 16px; color: green; font-weight: bold;"> Demande acceptée , dossier conforme.</p>', unsafe_allow_html=True)
         a2.image("im-p7/haut.png", caption="Bon score")
     elif response.text == '1':
-        a3.markdown('<p style="font-size: 16px; color: red; font-weight: bold;"> Malheureusement ! Demande non acceptée .</p>', unsafe_allow_html=True)
+        a3.markdown('<p style="font-size: 16px; color: red; font-weight: bold;"> Demande non acceptée, dossier insuffisant .</p>', unsafe_allow_html=True)
         a2.image("im-p7/bas.png", caption="Mauvais score")
-    elif response.text == '00':
-        a3.markdown('<p style="font-size: 16px; color: orange; font-weight: bold;"> Demande acceptée .</p>', unsafe_allow_html=True)
+    elif response.text == '3':
+        a3.markdown('<p style="font-size: 16px; color: orange; font-weight: bold;"> Demande acceptée , dossier à risque .</p>', unsafe_allow_html=True)
 
         a2.image("im-p7/milieu.png", caption="Score fragile")
 
