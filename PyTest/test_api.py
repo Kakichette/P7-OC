@@ -34,7 +34,7 @@ def test_predict_with_valid_id_3(client: FlaskClient):
     assert response.status_code == 200
     assert response.data.decode("utf-8") == "3"
 
-def test_predict_with_valid_id_3(client: FlaskClient):
+def test_predict_with_valid_id_1(client: FlaskClient):
     response = client.post("/predict", data={"client_id": 100092})
     assert response.status_code == 200
     assert response.data.decode("utf-8") == "1"
